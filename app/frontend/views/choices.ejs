@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choices for you | Hostel Room Clustering</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #34495e;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        textarea {
+            resize: none; /* Prevent resizing */
+        }
+        button {
+            background-color: #3498db; /* Blue for buttons */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <%- include("header_logout.ejs") %>
+
+    <div class="container">
+        <h1>Welcome <%= userData.username || "" %>! Please fill in your preferences </h1>
+
+        <!-- Choices Form -->
+        <form action="/choices/submit" method="post">
+            
+            <!-- Hidden User Data -->
+            <input type="hidden" name="userData" value='<%= JSON.stringify(userData) %>'>
+
+            <!-- Gender -->
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">--Select Gender--</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="degree">Degree:</label>
+            <select id="degree" name="degree" required>
+                <option value="">--Select Degree--</option>
+                <option value="Bachelors">Bachelors</option>
+                <option value="Masters">Masters</option>
+            </select>
+
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch" required>
+                <option value="">--Select Branch--</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Electronics and Communication">Electronics and Communication</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+                <option value="Chemical">Chemical</option>
+                <option value="Bio Technology">Bio Technology</option>
+                <option value="Production">Production</option>
+                <option value="Material Science">Material Science</option>
+                <option value="Engineering Physics">Engineering Physics</option>
+                <option value="Architecture">Architecture</option>
+            </select>
+
+            <label for="studyYear">Year of Study:</label>
+            <select id="studyYear" name="studyYear" required>
+                <option value="">--Select Year--</option>
+                <option value="No Preference">No Preference</option>
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+                <option value="Fourth">Fourth</option>
+                <option value="Fifth">Fifth</option>
+            </select>
+
+            <label for="floor">Preferred Floor:</label>
+            <select id="floor" name="floor" required>
+                <option value="">--Select Floor--</option>
+                <option value="No Preference">No Preference</option>
+                <option value="Basement">Basement</option>
+                <option value="Ground">Ground</option>
+                <option value="First">First</option>
+            </select>
+
+            <label for="lift">Lift Proximity:</label>
+            <select id="lift" name="lift" required>
+                <option value="">--Select Proximity--</option>
+                <option value="No Preference">No Preference</option>
+                <option value="very near">Very Near</option>
+                <option value="near">Near</option>
+                <option value="far">Far</option>
+                <option value="very far">Very Far</option>
+            </select>
+
+            <label for="mess">Mess Proximity:</label>
+            <select id="mess" name="mess" required>
+                <option value="">--Select Proximity--</option>
+                <option value="No Preference">No Preference</option>
+                <option value="very near">Very Near</option>
+                <option value="near">Near</option>
+                <option value="far">Far</option>
+                <option value="very far">Very Far</option>
+            </select>
+
+            <label for="window">Window Preference:</label>
+            <select id="window" name="window" required>
+                <option value="">--Select Window--</option>
+                <option value="No Preference">No Preference</option>
+                <option value="inside facing">Inside Facing</option>
+                <option value="outside facing">Outside Facing</option>
+            </select>
+
+
+            <!-- Submit Button -->
+            <button type="submit">Register for Room allocatment</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>
