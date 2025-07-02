@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Navigation Bar | Hostel Room Clustering</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        header {
+            background-color: #2c3e50; /* Dark blue-gray background */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between logo and logout button */
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 40px; /* Adjust logo size */
+            margin-right: 10px;
+        }
+        .logo h1 {
+            font-size: 24px;
+            color: white;
+            margin: 0;
+        }
+        nav form {
+            margin-left: auto; /* Push logout button to the right */
+        }
+        button {
+            background-color: #e74c3c; /* Red for logout button */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #c0392b; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- HRC Logo and Name -->
+        <div class="logo">
+            <img src="/images/logo.jpeg" alt="HRC Logo"> <!-- Replace with actual logo path -->
+            <h1 id="blahblah">Hostel Room Clustering</h1>
+        </div>
+        
+        <!-- Logout Button -->
+        <nav>
+            <form action="/logout" method="get">
+                <button type="submit">Logout</button>
+            </form>
+        </nav>
+    </header>
+</body>
+</html>

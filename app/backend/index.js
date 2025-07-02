@@ -168,6 +168,11 @@ app.post("/choices/submit",async (req,res)=>{
     }
 });
 
+//logout
+app.get("/logout",async (req, res) => {
+    res.redirect("/");
+});
+
 // Start the server
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
