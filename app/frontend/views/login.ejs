@@ -89,6 +89,9 @@
             <% if (typeof status !== "undefined" && status === "false") { %>
               <p id="invalid-credentials" class="error">Invalid Credentials</p>
             <% } %>
+            <% if (typeof newEntryStatus !== "undefined" && newEntryStatus === "true") { %>
+              <p id="invalid-credentials" class="error">Your preferences were recorded</p>
+            <% } %>
             <form action="/login/submit" method="post">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>

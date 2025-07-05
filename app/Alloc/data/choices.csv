@@ -1,0 +1,31 @@
+choice_id,user_id,gender,degree,branch,study_year,floor,lift,mess,window_p
+1,1,MALE,Bachelors,Computer Science,First,Ground,near,near,outside facing
+2,2,MALE,Bachelors,Computer Science,First,Ground,near,near,outside facing
+3,3,FEMALE,Masters,Electronics and Communication,Second,First,very near,near,inside facing
+4,4,FEMALE,Masters,Electronics and Communication,Second,First,very near,near,inside facing
+5,5,MALE,Bachelors,Mechanical,Third,Basement,far,very far,inside facing
+6,6,MALE,Bachelors,Mechanical,Third,Basement,far,very far,inside facing
+7,7,FEMALE,Bachelors,Civil,Fourth,Ground,near,near,outside facing
+8,8,FEMALE,Bachelors,Civil,Fourth,Ground,near,near,outside facing
+9,9,MALE,Masters,Chemical,Fifth,First,very near,near,outside facing
+10,10,MALE,Masters,Chemical,Fifth,First,very near,near,outside facing
+11,11,MALE,Bachelors,Computer Science,First,Ground,near,near,outside facing
+12,12,MALE,Bachelors,Computer Science,First,Ground,near,near,outside facing
+13,13,FEMALE,Masters,Electronics and Communication,Second,First,very near,near,inside facing
+14,14,FEMALE,Masters,Electronics and Communication,Second,First,very near,near,inside facing
+15,15,MALE,Bachelors,Mechanical,Third,Basement,far,very far,inside facing
+16,16,MALE,Bachelors,Mechanical,Third,Basement,far,very far,inside facing
+17,17,FEMALE,Bachelors,Civil,Fourth,Ground,near,near,outside facing
+18,18,FEMALE,Bachelors,Civil,Fourth,Ground,near,near,outside facing
+19,19,MALE,Masters,Chemical,Fifth,First,very near,near,outside facing
+20,20,MALE,Masters,Chemical,Fifth,First,very near,near,outside facing
+21,21,MALE,Bachelors,Bio Technology,First,Ground,near,near,inside facing
+22,22,FEMALE,Masters,Production,Second,First,very near,near,inside facing
+23,23,MALE,Bachelors,Material Science,Third,Basement,far,very far,outside facing
+24,24,FEMALE,Masters,Engineering Physics,Fourth,Ground,near,near,outside facing
+25,25,MALE,Bachelors,Architecture,Fifth,First,very near,near,inside facing
+26,26,FEMALE,Masters,Chemical,First,Basement,far,very far,inside facing
+27,27,MALE,Bachelors,Civil,Second,Ground,near,near,outside facing
+28,28,FEMALE,Masters,Mechanical,Third,First,very near,near,inside facing
+29,29,MALE,Bachelors,Computer Science,Fourth,Basement,far,very far,outside facing
+30,30,FEMALE,Masters,Electronics and Communication,Fifth,Ground,near,near,inside facing

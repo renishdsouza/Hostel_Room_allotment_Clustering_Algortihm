@@ -1,0 +1,15 @@
+room_no,user1_id,user2_id,user1_name,user2_name,group_no,compatibility_score,assigned_floor,lift_proximity,mess_proximity,has_outside_window
+1,19,20,User 19,User 20,3,110,First,5,4,yes
+2,17,18,User 17,User 18,3,110,Ground,4,4,yes
+3,15,16,User 15,User 16,7,110,Basement,2,1,no
+4,13,14,User 13,User 14,7,110,First,5,4,no
+5,11,12,User 11,User 12,2,110,Ground,4,4,yes
+6,9,10,User 9,User 10,2,110,First,5,4,yes
+7,7,8,User 7,User 8,6,110,Ground,4,4,yes
+8,5,6,User 5,User 6,6,110,Basement,2,1,no
+9,3,4,User 3,User 4,5,110,First,5,4,no
+10,1,2,User 1,User 2,5,110,Ground,4,4,yes
+11,25,27,User 25,User 27,4,37,First,4,4,yes
+12,22,24,User 22,User 24,1,37,First,4,4,yes
+13,26,28,User 26,User 28,4,32,Basement,3,2,no
+14,21,23,User 21,User 23,1,25,Ground,3,2,yes

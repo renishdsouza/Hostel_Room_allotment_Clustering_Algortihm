@@ -42,7 +42,6 @@ CREATE TABLE choices (
     degree degree_type NOT NULL,
     branch branch_type NOT NULL,
     study_year study_year_type NOT NULL,
-    room_mate VARCHAR(9) NOT NULL,
     floor floor_type NOT NULL,
     lift proximity_type NOT NULL,
     mess proximity_type NOT NULL,
@@ -52,83 +51,31 @@ CREATE TABLE choices (
 
 CREATE TABLE pod_1_table (
     pod_1_id SERIAL PRIMARY KEY,
-    user_id INT UNIQUE NOT NULL,
-    pod_1_preference VARCHAR(9) NOT NULL
+    username VARCHAR(15) UNIQUE NOT NULL,
+    pod_1_preference VARCHAR(15) NOT NULL
 );
 CREATE TABLE pod_2_table (
     pod_2_id SERIAL PRIMARY KEY,
-    user_id INT UNIQUE NOT NULL,
-    pod_2_preference VARCHAR(9) NOT NULL
+    username VARCHAR(15) UNIQUE NOT NULL,
+    pod_2_preference VARCHAR(15) NOT NULL
 );
 CREATE TABLE pod_3_table (
     pod_3_id SERIAL PRIMARY KEY,
-    user_id INT UNIQUE NOT NULL,
-    pod_3_preference VARCHAR(9) NOT NULL
+    username VARCHAR(15) UNIQUE NOT NULL,
+    pod_3_preference VARCHAR(15) NOT NULL
 );
 CREATE TABLE pod_4_table (
     pod_4_id SERIAL PRIMARY KEY,
-    user_id INT UNIQUE NOT NULL,
-    pod_4_preference VARCHAR(9) NOT NULL
+    username VARCHAR(15) UNIQUE NOT NULL,
+    pod_4_preference VARCHAR(15) NOT NULL
 );
 CREATE TABLE pod_5_table (
     pod_5_id SERIAL PRIMARY KEY,
-    user_id INT UNIQUE NOT NULL,
-    pod_5_preference VARCHAR(9) NOT NULL
+    username VARCHAR(15) UNIQUE NOT NULL,
+    pod_5_preference VARCHAR(15) NOT NULL
 );
 CREATE TABLE pod_6_table (
     pod_6_id SERIAL PRIMARY KEY,
-    user_id INT UNIQUE NOT NULL,
-    pod_6_preference VARCHAR(9) NOT NULL
+    username VARCHAR(15) UNIQUE NOT NULL,
+    pod_6_preference VARCHAR(15) NOT NULL
 );
-
-INSERT INTO "user" (username,password)
-VALUES
-('Renish Dsouza','B231198CS'),
-('Aarav Patel', 'B112367CS'),
-('Ishita Sharma', 'B176521CS'),
-('Mohan Kumar', 'B981543CS'),
-('Sneha Reddy', 'B236178CS'),
-('Rahul Verma', 'B347819CS'),
-('Neha Singh', 'B451690CS'),
-('Karan Mehta', 'B561901CS'),
-('Priya Jain', 'B67812CS'),
-('Riya Gupta', 'B7890131CS'),
-('Ananya Rao', 'B890341CS'),
-('Arjun Nair', 'B901145CS'),
-('Meera Joshi', 'B111334CS'),
-('Amit Das', 'B223234CS'),
-('Divya Sen', 'B334456CS'),
-('Vikram Bhat', 'B444667CS'),
-('Nisha Iyer', 'B556728CS'),
-('Akash Roy', 'B667579CS'),
-('Ritu Agarwal', 'B858990CS'),
-('Harsh Pandey', 'B884001CS'),
-('Alok Singh', 'B990052CS'),
-('Kavya Menon', 'B101231CS'),
-('Tarun Yadav', 'B121421CS'),
-('Reena Pillai', 'B131651CS'),
-('Siddharth S.', 'B141761CS'),
-('Pooja B.', 'B151771CS'),
-('Ishan K.', 'B161881CS'),
-('Swati J.', 'B171941CS'),
-('Gaurav T.', 'B182401CS'),
-('Deepak R.', 'B192701CS'),
-('Manish M.', 'B202251CS'),
-('Rashmi C.', 'B212351CS'),
-('Suresh D.', 'B222471CS'),
-('Bhavna E.', 'B232581CS'),
-('Tejas G.', 'B242691CS'),
-('Nidhi H.', 'B252741CS'),
-('Sameer I.', 'B266281CS'),
-('Shruti J.', 'B274291CS'),
-('Yash K.', 'B282961CS'),
-('Asha L.', 'B292181CS'),
-('Raj M.', 'B303117CS'),
-('Nikhil N.', 'B315331CS'),
-('Komal O.', 'B323471CS'),
-('Vivek P.', 'B333591CS'),
-('Aarti Q.', 'B343641CS'),
-('Nitin R.', 'B353761CS'),
-('Mehul S.', 'B363891CS'),
-('Varsha T.', 'B373941CS'),
-('Dipti U.', 'B383013CS');

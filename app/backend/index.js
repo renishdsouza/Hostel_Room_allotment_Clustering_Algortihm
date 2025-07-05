@@ -60,7 +60,8 @@ app.post("/login/submit", async (req, res) => {
 });
 
 app.post("/choices/submit",async (req,res)=>{
-    let {userData,gender,degree,branch,studyYear,roomMate,floor,lift,mess,window,pod1Preference,pod2Preference,pod3Preference,pod4Preference,pod5Preference,pod6Preference,}=req.body;
+    let {userData,gender,degree,branch,studyYear,floor,lift,mess,window_p,pod_1_preference,pod_2_preference,pod_3_preference,pod_4_preference,pod_5_preference,pod_6_preference}=req.body;
+
 
     try {
         userData = typeof
@@ -79,72 +80,71 @@ app.post("/choices/submit",async (req,res)=>{
         await client.query("BEGIN");
 
         //insert into choices table
-        const userInsertQuery='INSERT INTO choices (user_id,gender,degree,branch,study_year,room_mate,floor,lift,mess,window) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)';
+        const userInsertQuery='INSERT INTO choices (user_id,gender,degree,branch,study_year,floor,lift,mess,window_p) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) ON CONFLICT (user_id) DO UPDATE SET gender = EXCLUDED.gender, degree = EXCLUDED.degree, branch = EXCLUDED.branch, study_year = EXCLUDED.study_year, floor = EXCLUDED.floor, lift = EXCLUDED.lift, mess = EXCLUDED.mess, window_p = EXCLUDED.window_p';
 
         await client.query(userInsertQuery,[
-            userId,
+            userData.user_id,
             gender,
             degree,
             branch,
             studyYear,
-            roomMate,
             floor,
             lift,
             mess,
-            window
+            window_p
         ]);
 
-        if(pod1Preference!=="No Preference"){
-            const pod1Query='UPSERT INTO pod_1_table (user_id,pod1Preference) VALUES ($1,$2)';
+        if(pod_1_preference !== undefined){
+            const pod1Query='INSERT INTO pod_1_table (username,pod_1_preference) VALUES ($1,$2) ON CONFLICT (username) DO UPDATE SET pod_1_preference = EXCLUDED.pod_1_preference';
 
             await client.query(pod1Query,[
-                userId,
-                pod1Preference
+                userData.username,
+                pod_1_preference
             ]);
         }
-        else if(pod2Preference!=="No Preference"){
+        else if(pod_2_preference!== undefined){
             
-            const pod2Query='UPSERT INTO pod_2_table (user_id,pod2Preference) VALUES ($1,$2)';
+            const pod2Query='INSERT INTO pod_2_table (username,pod_2_preference) VALUES ($1,$2) ON CONFLICT (username) DO UPDATE SET pod_2_preference = EXCLUDED.pod_2_preference';
 
             await client.query(pod2Query,[
-                userId,
-                pod2Preference
+                userData.username,
+                pod_2_preference
             ]);
         }
-        else if(pod3Preference!=="No Preference"){
+        else if(pod_3_preference!== undefined){
             
-            const pod3Query='UPSERT INTO pod_3_table (user_id,pod3Preference) VALUES ($1,$2)';
+            const pod3Query='INSERT INTO pod_3_table (username,pod_3_preference) VALUES ($1,$2) ON CONFLICT (username) DO UPDATE SET pod_3_preference = EXCLUDED.pod_3_preference';
 
             await client.query(pod3Query,[
-                userId,
-                pod3Preference
+                userData.username,
+                pod_3_preference
             ]);
         }
-        else if(pod4Preference!=="No Preference"){
+        else if(pod_4_preference!== undefined){
             
-            const pod4Query='UPSERT INTO pod_4_table (user_id,pod4Preference) VALUES ($1,$2)';
+            const pod4Query='INSERT INTO pod_4_table (username,pod_4_preference) VALUES ($1,$2) ON CONFLICT (username) DO UPDATE SET pod_4_preference = EXCLUDED.pod_4_preference';
 
             await client.query(pod4Query,[
-                userId,
-                pod4Preference
+                userData.username,
+                pod_4_preference
             ]);
         }
-        else if(pod5Preference!=="No Preference"){
+        else if(pod_5_preference!== undefined){
             
-            const pod5Query='UPSERT INTO pod_5_table (user_id,pod5Preference) VALUES ($1,$2)';
+            const pod5Query='INSERT INTO pod_5_table (username,pod_5_preference) VALUES ($1,$2) ON CONFLICT (username) DO UPDATE SET pod_5_preference = EXCLUDED.pod_5_preference';
 
             await client.query(pod5Query,[
-                userId,
-                pod5Preference
+                userData.username,
+                pod_5_preference
             ]);
         }
-        else if(pod6Preference!=="No Preference"){
+        else if(pod_6_preference!== undefined){
             
-            const pod6Query='UPSERT INTO pod_6_table (user_id,pod6Preference) VALUES ($1,$2)';
+            const pod6Query='INSERT INTO pod_6_table (username,pod_6_preference) VALUES ($1,$2) ON CONFLICT (username) DO UPDATE SET pod_6_preference = EXCLUDED.pod_6_preference';
 
             await client.query(pod6Query,[
-                userId,
-                pod6Preference
+                userData.username,
+                pod_6_preference
             ]);
         }
 
@@ -152,7 +152,8 @@ app.post("/choices/submit",async (req,res)=>{
 
         res.render("login.ejs", {
             userData: userData ||
-            {}, newEntryStatus: "true"
+            {}, newEntryStatus: "true",
+            status:"true"
         });
 
     }
@@ -161,7 +162,7 @@ app.post("/choices/submit",async (req,res)=>{
         console.error("Transaction failed:",error);
         res.render("login.ejs",{
             userData:userData || {},
-            newEntryStatus: "false"
+            status: "false"
         });
     }
     finally{
